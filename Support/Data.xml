@@ -9,6 +9,14 @@
       <voltageDistortion>0.000000</voltageDistortion>
       <amperageDistortion>0.000000</amperageDistortion>
    </powerReading>
+   <powerReading channel="1">
+      <voltage units="Volts">0.000000</voltage>
+      <amperage units="Amps">0.000000</amperage>
+      <wattage units="Watts">0.000000</wattage>
+      <powerFactor>0.000000</powerFactor>
+      <voltageDistortion>0.000000</voltageDistortion>
+      <amperageDistortion>0.000000</amperageDistortion>
+   </powerReading>
    <temperatureReading channel="0" units="degC">0.000000</temperatureReading>
    <temperatureReading>Thermocouple is disconnected</temperatureReading>
 </StabilizationMeasurement>
