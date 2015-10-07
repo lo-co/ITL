@@ -23,6 +23,12 @@
 			<Item Name="Test Main.vi" Type="VI" URL="../Test/Test Main.vi"/>
 			<Item Name="Test XML Write.vi" Type="VI" URL="../Test/Test XML Write.vi"/>
 		</Item>
+		<Item Name="Xitron" Type="Folder">
+			<Item Name="GPIB Error Report.vi" Type="VI" URL="../xitron/3chl.llb/GPIB Error Report.vi"/>
+			<Item Name="Lead/Lag" Type="VI" URL="../xitron/3chl.llb/Lead/Lag"/>
+			<Item Name="Xitron 2503AH Library.lvlib" Type="Library" URL="../xitron/Xitron 2503AH Library.lvlib"/>
+			<Item Name="Xitron Basics Three Channels.vi" Type="VI" URL="../xitron/3chl.llb/Xitron Basics Three Channels.vi"/>
+		</Item>
 		<Item Name="yokogawa drivers" Type="Folder">
 			<Item Name="Yokogawa WT300 Series.lvlib" Type="Library" URL="/&lt;instrlib&gt;/Yokogawa WT300 Series/Yokogawa WT300 Series.lvlib"/>
 		</Item>
