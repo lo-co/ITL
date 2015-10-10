@@ -16,6 +16,7 @@
 		</Item>
 		<Item Name="Support" Type="Folder">
 			<Item Name="Data.xml" Type="Document" URL="../Support/Data.xml"/>
+			<Item Name="itl.ini" Type="Document" URL="../Support/itl.ini"/>
 			<Item Name="WT300-Communication Interface.pdf" Type="Document" URL="../Support/WT300-Communication Interface.pdf"/>
 			<Item Name="WT300_user_manual.pdf" Type="Document" URL="../Support/WT300_user_manual.pdf"/>
 		</Item>
@@ -79,7 +80,6 @@
 				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
-				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
 				<Item Name="DAQmx Clear Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Clear Task.vi"/>
 				<Item Name="DAQmx Create AI Channel (sub).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/channels.llb/DAQmx Create AI Channel (sub).vi"/>
 				<Item Name="DAQmx Create AI Channel TEDS(sub).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/channels.llb/DAQmx Create AI Channel TEDS(sub).vi"/>
