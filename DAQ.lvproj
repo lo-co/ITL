@@ -15,12 +15,14 @@
 			<Item Name="Stop FGV.vi" Type="VI" URL="../FGVs/Stop FGV.vi"/>
 		</Item>
 		<Item Name="Support" Type="Folder">
+			<Item Name="Configure GPIB.vi" Type="VI" URL="../Support/Configure GPIB.vi"/>
 			<Item Name="Data.xml" Type="Document" URL="../Support/Data.xml"/>
 			<Item Name="itl.ini" Type="Document" URL="../Support/itl.ini"/>
 			<Item Name="WT300-Communication Interface.pdf" Type="Document" URL="../Support/WT300-Communication Interface.pdf"/>
 			<Item Name="WT300_user_manual.pdf" Type="Document" URL="../Support/WT300_user_manual.pdf"/>
 		</Item>
 		<Item Name="Test" Type="Folder">
+			<Item Name="Test GPIB.vi" Type="VI" URL="../Test/Test GPIB.vi"/>
 			<Item Name="Test Main.vi" Type="VI" URL="../Test/Test Main.vi"/>
 			<Item Name="Test XML Write.vi" Type="VI" URL="../Test/Test XML Write.vi"/>
 		</Item>
@@ -34,6 +36,8 @@
 			<Item Name="Yokogawa WT300 Series.lvlib" Type="Library" URL="/&lt;instrlib&gt;/Yokogawa WT300 Series/Yokogawa WT300 Series.lvlib"/>
 		</Item>
 		<Item Name="daq" Type="Web Service">
+			<Property Name="Bld_buildSpecName" Type="Str"></Property>
+			<Property Name="Bld_version.build" Type="Int">4</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -73,6 +77,7 @@
 			</Item>
 		</Item>
 		<Item Name="Data.ctl" Type="VI" URL="../Data.ctl"/>
+		<Item Name="itl_icon.ico" Type="Document" URL="../Support/itl_icon.ico"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="State.ctl" Type="VI" URL="../State.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
@@ -233,6 +238,109 @@
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
+			<Item Name="ITL DAQ Installer" Type="Installer">
+				<Property Name="Destination[0].name" Type="Str">ITL</Property>
+				<Property Name="Destination[0].parent" Type="Str">{3912416A-D2E5-411B-AFEE-B63654D690C0}</Property>
+				<Property Name="Destination[0].tag" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
+				<Property Name="Destination[0].type" Type="Str">userFolder</Property>
+				<Property Name="Destination[1].name" Type="Str">Main</Property>
+				<Property Name="Destination[1].parent" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
+				<Property Name="Destination[1].tag" Type="Str">{0C566842-A946-40F3-92CC-8E087146E18C}</Property>
+				<Property Name="Destination[1].type" Type="Str">userFolder</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="DistPart[0].flavorID" Type="Str">_full_</Property>
+				<Property Name="DistPart[0].productID" Type="Str">{6DE8D782-DB58-4A4D-B240-F6FB01676601}</Property>
+				<Property Name="DistPart[0].productName" Type="Str">NI-488.2 Runtime 15.0</Property>
+				<Property Name="DistPart[0].upgradeCode" Type="Str">{357F6618-C660-41A2-A185-5578CC876D1D}</Property>
+				<Property Name="DistPart[1].flavorID" Type="Str">_full_</Property>
+				<Property Name="DistPart[1].productID" Type="Str">{7A1192BB-1A96-4D8B-9E44-446E5F071B68}</Property>
+				<Property Name="DistPart[1].productName" Type="Str">NI-DAQmx Runtime 15.0.1</Property>
+				<Property Name="DistPart[1].upgradeCode" Type="Str">{923C9CD5-A0D8-4147-9A8D-998780E30763}</Property>
+				<Property Name="DistPart[2].flavorID" Type="Str">_full_</Property>
+				<Property Name="DistPart[2].productID" Type="Str">{A1B6434D-04EC-46E1-A91C-3FD26D026343}</Property>
+				<Property Name="DistPart[2].productName" Type="Str">NI-Serial Runtime 15.0</Property>
+				<Property Name="DistPart[2].upgradeCode" Type="Str">{01D82F43-B48D-46FF-8601-FC4FAAE20F41}</Property>
+				<Property Name="DistPart[3].flavorID" Type="Str">_deployment_</Property>
+				<Property Name="DistPart[3].productID" Type="Str">{17EF98AB-54E8-48A7-A0DD-A8A4366E92B2}</Property>
+				<Property Name="DistPart[3].productName" Type="Str">NI-VISA Runtime 15.0</Property>
+				<Property Name="DistPart[3].upgradeCode" Type="Str">{8627993A-3F66-483C-A562-0D3BA3F267B1}</Property>
+				<Property Name="DistPart[4].flavorID" Type="Str">DefaultFull</Property>
+				<Property Name="DistPart[4].productID" Type="Str">{1CB9B79D-FBCA-43F4-B990-65BD2145BDD0}</Property>
+				<Property Name="DistPart[4].productName" Type="Str">NI LabVIEW Runtime 2015</Property>
+				<Property Name="DistPart[4].SoftDep[0].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[0].productName" Type="Str">NI LabVIEW Runtime 2015 Non-English Support.</Property>
+				<Property Name="DistPart[4].SoftDep[0].upgradeCode" Type="Str">{128ABF1E-5F69-40D1-8A81-33DCF8229F08}</Property>
+				<Property Name="DistPart[4].SoftDep[1].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[1].productName" Type="Str">NI ActiveX Container</Property>
+				<Property Name="DistPart[4].SoftDep[1].upgradeCode" Type="Str">{1038A887-23E1-4289-B0BD-0C4B83C6BA21}</Property>
+				<Property Name="DistPart[4].SoftDep[10].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[10].productName" Type="Str">NI mDNS Responder 14.0</Property>
+				<Property Name="DistPart[4].SoftDep[10].upgradeCode" Type="Str">{9607874B-4BB3-42CB-B450-A2F5EF60BA3B}</Property>
+				<Property Name="DistPart[4].SoftDep[11].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[11].productName" Type="Str">NI Deployment Framework 2015</Property>
+				<Property Name="DistPart[4].SoftDep[11].upgradeCode" Type="Str">{838942E4-B73C-492E-81A3-AA1E291FD0DC}</Property>
+				<Property Name="DistPart[4].SoftDep[12].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[12].productName" Type="Str">NI Error Reporting 2015</Property>
+				<Property Name="DistPart[4].SoftDep[12].upgradeCode" Type="Str">{42E818C6-2B08-4DE7-BD91-B0FD704C119A}</Property>
+				<Property Name="DistPart[4].SoftDep[2].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[2].productName" Type="Str">NI System Web Server 15.0</Property>
+				<Property Name="DistPart[4].SoftDep[2].upgradeCode" Type="Str">{FCF64B73-B7D4-4971-8F11-24BAF7CC3E6C}</Property>
+				<Property Name="DistPart[4].SoftDep[3].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[3].productName" Type="Str">Math Kernel Libraries</Property>
+				<Property Name="DistPart[4].SoftDep[3].upgradeCode" Type="Str">{4C0854AD-9BFC-4494-A4E0-D96C0C07F1F2}</Property>
+				<Property Name="DistPart[4].SoftDep[4].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[4].productName" Type="Str">NI Logos 15.0</Property>
+				<Property Name="DistPart[4].SoftDep[4].upgradeCode" Type="Str">{5E4A4CE3-4D06-11D4-8B22-006008C16337}</Property>
+				<Property Name="DistPart[4].SoftDep[5].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[5].productName" Type="Str">NI TDM Streaming 15.0</Property>
+				<Property Name="DistPart[4].SoftDep[5].upgradeCode" Type="Str">{4CD11BE6-6BB7-4082-8A27-C13771BC309B}</Property>
+				<Property Name="DistPart[4].SoftDep[6].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[6].productName" Type="Str">NI LabVIEW Web Server 2015</Property>
+				<Property Name="DistPart[4].SoftDep[6].upgradeCode" Type="Str">{78AAB900-C712-11E3-9C1A-0800200C9A66}</Property>
+				<Property Name="DistPart[4].SoftDep[7].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[7].productName" Type="Str">NI LabVIEW Real-Time NBFifo 2015</Property>
+				<Property Name="DistPart[4].SoftDep[7].upgradeCode" Type="Str">{25643B9A-90E8-4100-B30C-10EC4DE2EE68}</Property>
+				<Property Name="DistPart[4].SoftDep[8].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[8].productName" Type="Str">NI VC2008MSMs</Property>
+				<Property Name="DistPart[4].SoftDep[8].upgradeCode" Type="Str">{FDA3F8BB-BAA9-45D7-8DC7-22E1F5C76315}</Property>
+				<Property Name="DistPart[4].SoftDep[9].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[4].SoftDep[9].productName" Type="Str">NI VC2010MSMs</Property>
+				<Property Name="DistPart[4].SoftDep[9].upgradeCode" Type="Str">{EFBA6F9E-F934-4BD7-AC51-60CCA480489C}</Property>
+				<Property Name="DistPart[4].SoftDepCount" Type="Int">13</Property>
+				<Property Name="DistPart[4].upgradeCode" Type="Str">{CA8FF739-2EDA-4134-9A70-0F5DD933FDED}</Property>
+				<Property Name="DistPartCount" Type="Int">5</Property>
+				<Property Name="INST_autoIncrement" Type="Bool">true</Property>
+				<Property Name="INST_buildLocation" Type="Path">../builds/ITL DAQ/ITL DAQ Installer</Property>
+				<Property Name="INST_buildLocation.type" Type="Str">relativeToCommon</Property>
+				<Property Name="INST_buildSpecName" Type="Str">ITL DAQ Installer</Property>
+				<Property Name="INST_defaultDir" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
+				<Property Name="INST_productName" Type="Str">ITL DAQ</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.2</Property>
+				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
+				<Property Name="InstSpecVersion" Type="Str">15008024</Property>
+				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
+				<Property Name="MSI_distID" Type="Str">{9CFC4A40-941A-44B3-923E-FC10D88352CF}</Property>
+				<Property Name="MSI_hideNonRuntimes" Type="Bool">true</Property>
+				<Property Name="MSI_osCheck" Type="Int">0</Property>
+				<Property Name="MSI_upgradeCode" Type="Str">{CC416A73-EC83-4FE0-AB5F-B33EB65DF6B2}</Property>
+				<Property Name="RegDest[0].dirName" Type="Str">Software</Property>
+				<Property Name="RegDest[0].dirTag" Type="Str">{DDFAFC8B-E728-4AC8-96DE-B920EBB97A86}</Property>
+				<Property Name="RegDest[0].parentTag" Type="Str">2</Property>
+				<Property Name="RegDestCount" Type="Int">1</Property>
+				<Property Name="Source[0].dest" Type="Str">{0C566842-A946-40F3-92CC-8E087146E18C}</Property>
+				<Property Name="Source[0].File[0].dest" Type="Str">{0C566842-A946-40F3-92CC-8E087146E18C}</Property>
+				<Property Name="Source[0].File[0].name" Type="Str">TempAndPower.exe</Property>
+				<Property Name="Source[0].File[0].Shortcut[0].destIndex" Type="Int">0</Property>
+				<Property Name="Source[0].File[0].Shortcut[0].name" Type="Str">TempAndPower</Property>
+				<Property Name="Source[0].File[0].Shortcut[0].subDir" Type="Str">DAQ</Property>
+				<Property Name="Source[0].File[0].ShortcutCount" Type="Int">1</Property>
+				<Property Name="Source[0].File[0].tag" Type="Str">{CD248375-13E6-4710-91E4-6633ADEDE835}</Property>
+				<Property Name="Source[0].FileCount" Type="Int">1</Property>
+				<Property Name="Source[0].name" Type="Str">Temp_Power</Property>
+				<Property Name="Source[0].tag" Type="Ref">/My Computer/Build Specifications/Temp_Power</Property>
+				<Property Name="Source[0].type" Type="Str">EXE</Property>
+				<Property Name="SourceCount" Type="Int">1</Property>
+			</Item>
 			<Item Name="Source Distribution for Barry" Type="Zip File">
 				<Property Name="Absolute[0]" Type="Bool">false</Property>
 				<Property Name="BuildName" Type="Str">Source Distribution for Barry</Property>
@@ -245,6 +353,49 @@
 				<Property Name="IncludeProject" Type="Bool">true</Property>
 				<Property Name="Path[0]" Type="Path">../../builds/DAQ/Source Distribution for Barry/DAQ.zip</Property>
 				<Property Name="ZipBase" Type="Str">NI_zipbasedefault</Property>
+			</Item>
+			<Item Name="Temp_Power" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{F10E4E31-B1C7-4CA3-AC7F-56BA21D130C2}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{CF7D6D04-FC50-4DE6-8C70-17765EED2F7E}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">13986</Property>
+				<Property Name="App_webService.count" Type="Int">1</Property>
+				<Property Name="App_webService[0].itemID" Type="Ref">/My Computer/daq</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{0ED81CE4-AB0B-42DF-AEFA-0BA2799999A2}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Temp_Power</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{56074E10-2DD5-493A-A0EB-4B2C3A847F1E}</Property>
+				<Property Name="Bld_version.build" Type="Int">4</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">TempAndPower.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power/TempAndPower.exe</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power/support</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/itl_icon.ico</Property>
+				<Property Name="Source[0].itemID" Type="Str">{4468735C-82D2-4BFC-8F55-62999393E2B1}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Support/itl.ini</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">3</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Temp_Power</Property>
+				<Property Name="TgtF_internalName" Type="Str">Temp_Power</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2015 </Property>
+				<Property Name="TgtF_productName" Type="Str">Temp_Power</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{CD248375-13E6-4710-91E4-6633ADEDE835}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">TempAndPower.exe</Property>
 			</Item>
 		</Item>
 	</Item>
