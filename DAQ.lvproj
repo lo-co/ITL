@@ -14,9 +14,14 @@
 			<Item Name="Data FGV.vi" Type="VI" URL="../FGVs/Data FGV.vi"/>
 			<Item Name="Stop FGV.vi" Type="VI" URL="../FGVs/Stop FGV.vi"/>
 		</Item>
+		<Item Name="Power Meter Objects" Type="Folder">
+			<Item Name="Power Meter.lvclass" Type="LVClass" URL="../Power Meter/Parent/Power Meter.lvclass"/>
+			<Item Name="Xitron.lvclass" Type="LVClass" URL="../Power Meter/Xitron/Xitron.lvclass"/>
+			<Item Name="Yokogawa.lvclass" Type="LVClass" URL="../Power Meter/Yokogawa/Yokogawa.lvclass"/>
+		</Item>
 		<Item Name="Support" Type="Folder">
-			<Item Name="Configure GPIB.vi" Type="VI" URL="../Support/Configure GPIB.vi"/>
 			<Item Name="Data.xml" Type="Document" URL="../Support/Data.xml"/>
+			<Item Name="Get ITL Data.vi" Type="VI" URL="../xitron/Get ITL Data.vi"/>
 			<Item Name="itl.ini" Type="Document" URL="../Support/itl.ini"/>
 			<Item Name="WT300-Communication Interface.pdf" Type="Document" URL="../Support/WT300-Communication Interface.pdf"/>
 			<Item Name="WT300_user_manual.pdf" Type="Document" URL="../Support/WT300_user_manual.pdf"/>
@@ -37,7 +42,7 @@
 		</Item>
 		<Item Name="daq" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">4</Property>
+			<Property Name="Bld_version.build" Type="Int">16</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -77,7 +82,9 @@
 			</Item>
 		</Item>
 		<Item Name="Data.ctl" Type="VI" URL="../Data.ctl"/>
+		<Item Name="Global Data.ctl" Type="VI" URL="../Global Data.ctl"/>
 		<Item Name="itl_icon.ico" Type="Document" URL="../Support/itl_icon.ico"/>
+		<Item Name="itl_icon32.ico" Type="Document" URL="../Support/itl_icon32.ico"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="State.ctl" Type="VI" URL="../State.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
@@ -223,6 +230,8 @@
 				<Item Name="DAQmx Set CJC Parameters (sub).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/channels.llb/DAQmx Set CJC Parameters (sub).vi"/>
 				<Item Name="DAQmx Start Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Start Task.vi"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Get LV Class Default Value.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/LVClass/Get LV Class Default Value.vi"/>
+				<Item Name="GPIB Status Boolean Array.ctl" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/GPIB Status Boolean Array.ctl"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
@@ -315,7 +324,7 @@
 				<Property Name="INST_buildSpecName" Type="Str">ITL DAQ Installer</Property>
 				<Property Name="INST_defaultDir" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
 				<Property Name="INST_productName" Type="Str">ITL DAQ</Property>
-				<Property Name="INST_productVersion" Type="Str">1.0.2</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.3</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">15008024</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
@@ -340,6 +349,111 @@
 				<Property Name="Source[0].tag" Type="Ref">/My Computer/Build Specifications/Temp_Power</Property>
 				<Property Name="Source[0].type" Type="Str">EXE</Property>
 				<Property Name="SourceCount" Type="Int">1</Property>
+			</Item>
+			<Item Name="ITL DAQ Installer no NI Installers" Type="Installer">
+				<Property Name="Destination[0].name" Type="Str">ITL</Property>
+				<Property Name="Destination[0].parent" Type="Str">{3912416A-D2E5-411B-AFEE-B63654D690C0}</Property>
+				<Property Name="Destination[0].tag" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
+				<Property Name="Destination[0].type" Type="Str">userFolder</Property>
+				<Property Name="Destination[1].name" Type="Str">Main</Property>
+				<Property Name="Destination[1].parent" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
+				<Property Name="Destination[1].tag" Type="Str">{0C566842-A946-40F3-92CC-8E087146E18C}</Property>
+				<Property Name="Destination[1].type" Type="Str">userFolder</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="INST_autoIncrement" Type="Bool">true</Property>
+				<Property Name="INST_buildLocation" Type="Path">../builds/ITL DAQ/ITL DAQ Installer</Property>
+				<Property Name="INST_buildLocation.type" Type="Str">relativeToCommon</Property>
+				<Property Name="INST_buildSpecName" Type="Str">ITL DAQ Installer no NI Installers</Property>
+				<Property Name="INST_defaultDir" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
+				<Property Name="INST_productName" Type="Str">ITL DAQ</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.5</Property>
+				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
+				<Property Name="InstSpecVersion" Type="Str">15008024</Property>
+				<Property Name="MSI_arpCompany" Type="Str">MSR Consulting, LLC</Property>
+				<Property Name="MSI_arpContact" Type="Str">M. Richardson</Property>
+				<Property Name="MSI_arpPhone" Type="Str">303-931-6760</Property>
+				<Property Name="MSI_arpURL" Type="Str">http://www.msrconsults.com</Property>
+				<Property Name="MSI_distID" Type="Str">{B382A2B8-4197-4D39-B9C4-0B882E8DE365}</Property>
+				<Property Name="MSI_hideNonRuntimes" Type="Bool">true</Property>
+				<Property Name="MSI_osCheck" Type="Int">0</Property>
+				<Property Name="MSI_upgradeCode" Type="Str">{69167766-11CB-4E66-A58A-1467490DB765}</Property>
+				<Property Name="MSI_windowMessage" Type="Str">This installer provides the executable for the ITL temperature and power server.  This version is intended to be used with the Yokogawa WT330 digital power meter.</Property>
+				<Property Name="MSI_windowTitle" Type="Str">ITL DAQ Installer</Property>
+				<Property Name="RegDest[0].dirName" Type="Str">Software</Property>
+				<Property Name="RegDest[0].dirTag" Type="Str">{DDFAFC8B-E728-4AC8-96DE-B920EBB97A86}</Property>
+				<Property Name="RegDest[0].parentTag" Type="Str">2</Property>
+				<Property Name="RegDestCount" Type="Int">1</Property>
+				<Property Name="Source[0].dest" Type="Str">{0C566842-A946-40F3-92CC-8E087146E18C}</Property>
+				<Property Name="Source[0].File[0].dest" Type="Str">{0C566842-A946-40F3-92CC-8E087146E18C}</Property>
+				<Property Name="Source[0].File[0].name" Type="Str">ITL Temp and Power Server.exe</Property>
+				<Property Name="Source[0].File[0].Shortcut[0].destIndex" Type="Int">0</Property>
+				<Property Name="Source[0].File[0].Shortcut[0].name" Type="Str">TempAndPower</Property>
+				<Property Name="Source[0].File[0].Shortcut[0].subDir" Type="Str">DAQ</Property>
+				<Property Name="Source[0].File[0].ShortcutCount" Type="Int">1</Property>
+				<Property Name="Source[0].File[0].tag" Type="Str">{CD248375-13E6-4710-91E4-6633ADEDE835}</Property>
+				<Property Name="Source[0].FileCount" Type="Int">1</Property>
+				<Property Name="Source[0].name" Type="Str">Temp_Power</Property>
+				<Property Name="Source[0].tag" Type="Ref">/My Computer/Build Specifications/Temp_Power</Property>
+				<Property Name="Source[0].type" Type="Str">EXE</Property>
+				<Property Name="SourceCount" Type="Int">1</Property>
+			</Item>
+			<Item Name="ITL DAQ Xitron Installer no NI Installers" Type="Installer">
+				<Property Name="Destination[0].name" Type="Str">ITL</Property>
+				<Property Name="Destination[0].parent" Type="Str">{3912416A-D2E5-411B-AFEE-B63654D690C0}</Property>
+				<Property Name="Destination[0].tag" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
+				<Property Name="Destination[0].type" Type="Str">userFolder</Property>
+				<Property Name="Destination[1].name" Type="Str">Main</Property>
+				<Property Name="Destination[1].parent" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
+				<Property Name="Destination[1].tag" Type="Str">{0C566842-A946-40F3-92CC-8E087146E18C}</Property>
+				<Property Name="Destination[1].type" Type="Str">userFolder</Property>
+				<Property Name="Destination[2].name" Type="Str">Xitron</Property>
+				<Property Name="Destination[2].parent" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
+				<Property Name="Destination[2].tag" Type="Str">{5426597C-EE07-49FD-89CE-B516A1DE9BAB}</Property>
+				<Property Name="Destination[2].type" Type="Str">userFolder</Property>
+				<Property Name="DestinationCount" Type="Int">3</Property>
+				<Property Name="INST_autoIncrement" Type="Bool">true</Property>
+				<Property Name="INST_buildLocation" Type="Path">../builds/ITL DAQ/ITL Xitron DAQ Installer</Property>
+				<Property Name="INST_buildLocation.type" Type="Str">relativeToCommon</Property>
+				<Property Name="INST_buildSpecName" Type="Str">ITL DAQ Xitron Installer no NI Installers</Property>
+				<Property Name="INST_defaultDir" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
+				<Property Name="INST_productName" Type="Str">ITL DAQ</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.7</Property>
+				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
+				<Property Name="InstSpecVersion" Type="Str">15008024</Property>
+				<Property Name="MSI_arpCompany" Type="Str">MSR Consulting, LLC</Property>
+				<Property Name="MSI_arpContact" Type="Str">M. Richardson</Property>
+				<Property Name="MSI_arpPhone" Type="Str">303-931-6760</Property>
+				<Property Name="MSI_arpURL" Type="Str">http://www.msrconsults.com</Property>
+				<Property Name="MSI_distID" Type="Str">{C7CC0ED8-F2A6-4732-94B5-DC627D86AAF2}</Property>
+				<Property Name="MSI_hideNonRuntimes" Type="Bool">true</Property>
+				<Property Name="MSI_osCheck" Type="Int">0</Property>
+				<Property Name="MSI_upgradeCode" Type="Str">{790AEF0E-1B9F-428F-A76D-F4C077710200}</Property>
+				<Property Name="MSI_windowMessage" Type="Str">This installer provides the executable for the ITL temperature and power server.  This version is intended to be used with the Yokogawa WT330 digital power meter.</Property>
+				<Property Name="MSI_windowTitle" Type="Str">ITL DAQ Installer</Property>
+				<Property Name="RegDest[0].dirName" Type="Str">Software</Property>
+				<Property Name="RegDest[0].dirTag" Type="Str">{DDFAFC8B-E728-4AC8-96DE-B920EBB97A86}</Property>
+				<Property Name="RegDest[0].parentTag" Type="Str">2</Property>
+				<Property Name="RegDestCount" Type="Int">1</Property>
+				<Property Name="Source[0].dest" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
+				<Property Name="Source[0].File[0].dest" Type="Str">{0C566842-A946-40F3-92CC-8E087146E18C}</Property>
+				<Property Name="Source[0].File[0].name" Type="Str">ITL Temp and Power Server.exe</Property>
+				<Property Name="Source[0].File[0].tag" Type="Str">{CD248375-13E6-4710-91E4-6633ADEDE835}</Property>
+				<Property Name="Source[0].name" Type="Str">itl_icon.ico</Property>
+				<Property Name="Source[0].tag" Type="Ref">/My Computer/itl_icon.ico</Property>
+				<Property Name="Source[0].type" Type="Str">File</Property>
+				<Property Name="Source[1].dest" Type="Str">{5426597C-EE07-49FD-89CE-B516A1DE9BAB}</Property>
+				<Property Name="Source[1].File[0].dest" Type="Str">{5426597C-EE07-49FD-89CE-B516A1DE9BAB}</Property>
+				<Property Name="Source[1].File[0].name" Type="Str">ITL Xitron Temp and Power.exe</Property>
+				<Property Name="Source[1].File[0].Shortcut[0].destIndex" Type="Int">0</Property>
+				<Property Name="Source[1].File[0].Shortcut[0].name" Type="Str">ITL Xitron Temp and Power</Property>
+				<Property Name="Source[1].File[0].Shortcut[0].subDir" Type="Str">ITL DAQ</Property>
+				<Property Name="Source[1].File[0].ShortcutCount" Type="Int">1</Property>
+				<Property Name="Source[1].File[0].tag" Type="Str">{FFBAB5E2-21BE-4BA9-B1A7-0A60A9655A78}</Property>
+				<Property Name="Source[1].FileCount" Type="Int">1</Property>
+				<Property Name="Source[1].name" Type="Str">Xitron</Property>
+				<Property Name="Source[1].tag" Type="Ref">/My Computer/Build Specifications/Xitron</Property>
+				<Property Name="Source[1].type" Type="Str">EXE</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
 			</Item>
 			<Item Name="Source Distribution for Barry" Type="Zip File">
 				<Property Name="Absolute[0]" Type="Bool">false</Property>
@@ -370,17 +484,17 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{56074E10-2DD5-493A-A0EB-4B2C3A847F1E}</Property>
-				<Property Name="Bld_version.build" Type="Int">4</Property>
+				<Property Name="Bld_version.build" Type="Int">11</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">TempAndPower.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power/TempAndPower.exe</Property>
+				<Property Name="Destination[0].destName" Type="Str">ITL Temp and Power Server.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power/ITL Temp and Power Server.exe</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power/support</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/itl_icon.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{4468735C-82D2-4BFC-8F55-62999393E2B1}</Property>
+				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/itl_icon32.ico</Property>
+				<Property Name="Source[0].itemID" Type="Str">{46E6F0E3-8B7D-443B-A897-0109E10C2B3D}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main.vi</Property>
@@ -389,13 +503,67 @@
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Support/itl.ini</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="SourceCount" Type="Int">3</Property>
+				<Property Name="Source[3].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[3].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Power Meter Objects</Property>
+				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].type" Type="Str">Container</Property>
+				<Property Name="SourceCount" Type="Int">4</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">Temp_Power</Property>
 				<Property Name="TgtF_internalName" Type="Str">Temp_Power</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2015 </Property>
 				<Property Name="TgtF_productName" Type="Str">Temp_Power</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{CD248375-13E6-4710-91E4-6633ADEDE835}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">TempAndPower.exe</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">ITL Temp and Power Server.exe</Property>
+			</Item>
+			<Item Name="Xitron" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{9AC8A119-5C59-4CF7-B2C9-5329590361A9}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{1BBC8632-3E36-4DB8-A5C4-05EC8E6AD103}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">13986</Property>
+				<Property Name="App_webService.count" Type="Int">1</Property>
+				<Property Name="App_webService[0].itemID" Type="Ref">/My Computer/daq</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{4D274C86-B3D7-41A8-968B-9E517F23D956}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Xitron</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/Xitron</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{24A24D5B-5B05-4CD0-831A-E743D8629423}</Property>
+				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
+				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
+				<Property Name="Bld_version.build" Type="Int">9</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">ITL Xitron Temp and Power.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Xitron/ITL Xitron Temp and Power.exe</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Xitron/support</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/itl_icon32.ico</Property>
+				<Property Name="Source[0].itemID" Type="Str">{8C653328-57B1-4CCD-8612-A2B9088A9946}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Support/itl.ini</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/itl_icon.ico</Property>
+				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">4</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Temp_Power</Property>
+				<Property Name="TgtF_internalName" Type="Str">Temp_Power</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2015 </Property>
+				<Property Name="TgtF_productName" Type="Str">Temp_Power</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{FFBAB5E2-21BE-4BA9-B1A7-0A60A9655A78}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">ITL Xitron Temp and Power.exe</Property>
 			</Item>
 		</Item>
 	</Item>

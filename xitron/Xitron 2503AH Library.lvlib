@@ -5,7 +5,7 @@
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Item Name="Private" Type="Folder">
-		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
+		<Property Name="NI.LibItem.Scope" Type="Int">1</Property>
 		<Item Name="Send &amp; Read" Type="VI" URL="../3chl.llb/Send &amp; Read"/>
 		<Item Name="String to Array" Type="VI" URL="../3chl.llb/String to Array"/>
 	</Item>
