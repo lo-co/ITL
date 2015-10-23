@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PowerItlSettings>
+	<!--
+	<powerMeter type="Yokogawa WT330">
+    	<comPort>COM9</comPort>
+    	<gpibPort>2</gpibPort>
+  	</powerMeter>
+  	-->
+  	
+		
+ 	<!--
+	<powerMeter type="Yokogawa WT210">
+		<comPort>COM5</comPort>
+		<gpibPort>2</gpibPort>
+	</powerMeter>
+	-->
+ 
+	<powerMeter type="Null"/>
+
+	<!--	 
+	<thermocoupleDaq type="Omega OM-USB-TC">
+		<board>0</board>
+	</thermocoupleDaq>
+	-->
+  
+	<!--
+	<thermocoupleDaq type="Omega HH802U">
+		<comPort>COM3</comPort>
+		<id>0</id>
+		<channel>0</channel>
+	</thermocoupleDaq>
+	-->
+	 
+	<thermocoupleDaq type="Null"/>
+	
+	<servlet>
+		<port>13986</port>
+	</servlet>
+</PowerItlSettings>

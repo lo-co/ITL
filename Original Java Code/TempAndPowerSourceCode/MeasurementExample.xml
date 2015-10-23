@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StabilizationMeasurement>
+	<time>1392234992536</time>
+	<formattedTime>12:56:32</formattedTime>
+	<powerReading channel="0">
+		<voltage units="Volts">124.997122</voltage>
+		<amperage units="Amps">11.998849</amperage>
+		<wattage units="Watts">1499.821586</wattage>
+		<powerFactor>0.999942</powerFactor>
+		<voltageDistortion>15.199885</voltageDistortion>
+		<amperageDistortion>16.199885</amperageDistortion>
+	</powerReading>
+	<powerReading channel="1">
+		<voltage units="Volts">64.996794</voltage>
+		<amperage units="Amps">6.998717</amperage>
+		<wattage units="Watts">454.894197</wattage>
+		<powerFactor>0.899936</powerFactor>
+		<voltageDistortion>25.199872</voltageDistortion>
+		<amperageDistortion>26.199872</amperageDistortion>
+	</powerReading>
+	<powerReading channel="2">
+		<voltage units="Volts">34.996680</voltage>
+		<amperage units="Amps">5.998672</amperage>
+		<wattage units="Watts">209.933609</wattage>
+		<powerFactor>0.699934</powerFactor>
+		<voltageDistortion>45.199867</voltageDistortion>
+		<amperageDistortion>46.199867</amperageDistortion>
+	</powerReading>
+	<temperatureReading channel="0" units="deg C">24.668766
+	</temperatureReading>
+	<temperatureReading channel="1" units="deg C">26.668767
+	</temperatureReading>
+</StabilizationMeasurement>

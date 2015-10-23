@@ -23,10 +23,17 @@
 			<Item Name="Data.xml" Type="Document" URL="../Support/Data.xml"/>
 			<Item Name="Get ITL Data.vi" Type="VI" URL="../xitron/Get ITL Data.vi"/>
 			<Item Name="itl.ini" Type="Document" URL="../Support/itl.ini"/>
+			<Item Name="USB-TC01.pdf" Type="Document" URL="../Support/USB-TC01.pdf"/>
 			<Item Name="WT300-Communication Interface.pdf" Type="Document" URL="../Support/WT300-Communication Interface.pdf"/>
 			<Item Name="WT300_user_manual.pdf" Type="Document" URL="../Support/WT300_user_manual.pdf"/>
 		</Item>
+		<Item Name="Temperature Objects" Type="Folder">
+			<Item Name="HH802U.lvclass" Type="LVClass" URL="../Temperature Device/HH802U/HH802U.lvclass"/>
+			<Item Name="TC01.lvclass" Type="LVClass" URL="../Temperature Device/TC01/TC01.lvclass"/>
+			<Item Name="Temperature Device.lvclass" Type="LVClass" URL="../Temperature Device/Parent/Temperature Device.lvclass"/>
+		</Item>
 		<Item Name="Test" Type="Folder">
+			<Item Name="Test Command.vi" Type="VI" URL="../Test/Test Command.vi"/>
 			<Item Name="Test GPIB.vi" Type="VI" URL="../Test/Test GPIB.vi"/>
 			<Item Name="Test Main.vi" Type="VI" URL="../Test/Test Main.vi"/>
 			<Item Name="Test XML Write.vi" Type="VI" URL="../Test/Test XML Write.vi"/>
@@ -42,7 +49,7 @@
 		</Item>
 		<Item Name="daq" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">16</Property>
+			<Property Name="Bld_version.build" Type="Int">17</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -237,6 +244,9 @@
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="NI_WebServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/wsapi/NI_WebServices.lvlib"/>
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
+				<Item Name="VISA Configure Serial Port" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port"/>
+				<Item Name="VISA Configure Serial Port (Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Instr).vi"/>
+				<Item Name="VISA Configure Serial Port (Serial Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Serial Instr).vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
@@ -484,7 +494,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{56074E10-2DD5-493A-A0EB-4B2C3A847F1E}</Property>
-				<Property Name="Bld_version.build" Type="Int">11</Property>
+				<Property Name="Bld_version.build" Type="Int">12</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ITL Temp and Power Server.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power/ITL Temp and Power Server.exe</Property>
@@ -494,7 +504,7 @@
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power/support</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/itl_icon32.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{46E6F0E3-8B7D-443B-A897-0109E10C2B3D}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{7220387B-E0BC-498E-A3E3-D2117CC122DA}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main.vi</Property>
@@ -509,7 +519,13 @@
 				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Power Meter Objects</Property>
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[3].type" Type="Str">Container</Property>
-				<Property Name="SourceCount" Type="Int">4</Property>
+				<Property Name="Source[4].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[4].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/My Computer/Temperature Objects</Property>
+				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[4].type" Type="Str">Container</Property>
+				<Property Name="SourceCount" Type="Int">5</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">Temp_Power</Property>
 				<Property Name="TgtF_internalName" Type="Str">Temp_Power</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2015 </Property>

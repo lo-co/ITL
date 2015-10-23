@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+		xmlns="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace="http://10.0.1.242/PowerItlSettings" 
+		xmlns:tns="http://10.0.1.242/PowerItlSettings" elementFormDefault="qualified">
+
+    <element name="PowerItlSettings">
+    	<complexType>
+    		<sequence>
+    			<element name="powerMeter" maxOccurs="1" minOccurs="1">
+    				<complexType>
+    					<sequence>
+    						<element name="comPort" type="tns:comPortType" minOccurs="0" maxOccurs="1"/>
+    						<element name="gpibPort" type="int" minOccurs="0" maxOccurs="1"></element>
+    					</sequence>
+    					<attribute name="type" use="required">
+    						<simpleType>
+    							<restriction base="string">
+    								<enumeration value="Yokogawa WT210"></enumeration>
+    								<enumeration value="Yokogawa WT330"></enumeration>
+    								<enumeration value="Chroma 66200"></enumeration>
+    								<enumeration value="Null"></enumeration>
+    							</restriction>
+    						</simpleType>
+    					</attribute>
+    				</complexType>
+    			</element>
+    			<element name="thermocoupleDaq" maxOccurs="1" minOccurs="1">
+    				<complexType>
+    					<sequence>
+    						<element name="comPort" type="tns:comPortType" minOccurs="0" maxOccurs="1"/>
+    						<element name="board" type="int" maxOccurs="1" minOccurs="0"/>
+    						<element name="id" type="int" maxOccurs="1" minOccurs="0"/>
+    						<element name="channel" type="int" maxOccurs="1" minOccurs="0"/>
+    					</sequence>
+    					<attribute name="type" use="required">
+    						<simpleType>
+    							<restriction base="string">
+    								<enumeration value="Omega HH802U"></enumeration>
+    								<enumeration value="Omega OM-USB-TC"></enumeration>
+    								<enumeration value="Null"></enumeration>
+    							</restriction>
+    						</simpleType>
+    					</attribute>
+    				</complexType>
+    			</element>
+    			<element name="servlet" maxOccurs="1" minOccurs="1">
+    				<complexType>
+    					<sequence>
+    						<element name="port" type="int"></element>
+    					</sequence>
+    				</complexType>
+    			</element>
+    		</sequence>
+    	</complexType>
+    </element>
+
+	<element name="StabilizationMeasurement">
+    	<complexType>
+    		<sequence>
+    			<element name="time" type="string" maxOccurs="1" minOccurs="1"/>
+    			<element name="formattedTime" type="string" maxOccurs="1" minOccurs="1"/>
+    			<element name="powerReading" type="tns:powerMeasurement" minOccurs="0" maxOccurs="3"/>
+    			<element name="temperatureReading" type="tns:temperatureMeasurement" minOccurs="0" maxOccurs="2" />
+    		</sequence>
+    	</complexType>
+    </element>
+
+	<complexType name="powerMeasurement">
+	<sequence>
+		<element name="voltage" type="tns:measurement" minOccurs="1" maxOccurs="1" />
+		<element name="amperage" type="tns:measurement" minOccurs="1" maxOccurs="1" />
+		<element name="wattage" type="tns:measurement" minOccurs="1" maxOccurs="1" />
+		<element name="powerFactor" type="tns:measurement" minOccurs="1" maxOccurs="1" />
+		<element name="voltageDistortion" type="tns:measurement" minOccurs="1" maxOccurs="1" />
+		<element name="amperageDistortion" type="tns:measurement" minOccurs="1" maxOccurs="1" />
+	</sequence>
+	</complexType>
+
+    <complexType name="temperatureMeasurement">
+    	<simpleContent>
+    		<extension base="string">
+    			<attribute name="units" type="string" use="required"/>
+    			<attribute name="channel" type="int" use="required"/>
+    		</extension>
+    	</simpleContent>
+    </complexType>
+    
+    <complexType name="measurement">
+    	<simpleContent>
+    		<extension base="string">
+    			<attribute name="units" type="string" use="optional" />
+    		</extension>
+    	</simpleContent>
+    </complexType>
+    
+    <simpleType name="comPortType">
+    	<restriction base="string">
+    		<pattern value="COM[0-9]+"/>
+    	</restriction>
+    </simpleType>
+</schema>

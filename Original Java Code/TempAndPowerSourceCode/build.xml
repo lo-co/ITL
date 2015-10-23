@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="DataAcquisition">
+	<!-- General Ant note: javac targets require tools.jar to be on the classpath.
+	This may be problematic, since tools.jar is inlcuded with the JDK, not the JRE! -->
+	<tstamp prefix="build-info">
+		<format property="current-date" pattern="yyyy-MM-dd" locale="en" />
+		<format property="current-time" pattern="HH:mm:ss" locale="en" />
+	</tstamp>
+	
+	<property name="source-directory" value="src" />
+	<property name="build-directory" value ="build" />
+	<property name="classes-directory" value="${build-directory}/bin" />
+	
+	<target name="clean">
+		<delete dir="${build-directory}"/>
+	</target>
+	
+	<!-- This is used for compilation -->
+	<path id="classpath">
+		<fileset dir="C:/Users/Kyle/user libraries/jna-3.5.1/" />
+		<fileset file="C:/Users/Kyle/user libraries/apache-log4j-1.2.17/log4j-1.2.17.jar" />
+		<fileset file="C:/Users/Kyle/user libraries/GeneralTools.jar" />
+	</path>
+	
+	<!-- Compile everything in the source directory to the classes directory 
+	using the classpath defined above. -->
+	<target name="compile" depends="clean">
+		<mkdir dir="${classes-directory}"/>
+		<javac srcdir="${source-directory}" destdir="${classes-directory}" 
+				classpathref="classpath" includeantruntime="false" />
+	</target>
+	
+	<property name="simulator-jar-name" value="daqSim.jar"/>
+	<target name="simulator-jar" depends="compile">
+		<jar destfile="${build-directory}/${simulator-jar-name}" 
+				basedir="${classes-directory}" includes="com/itl/comm/powerItl/*">
+			<zipfileset src="C:/Users/Kyle/user libraries/jna-3.5.1/jna-3.5.1.jar" excludes="META-INF/**" />
+			<zipfileset src="C:/Users/Kyle/user libraries/jna-3.5.1/platform-3.5.1.jar" excludes="META-INF/**" />
+			
+			<manifest>
+				<attribute name="Built-By" value="kgraba" />
+				<attribute name="Built-On" value="${build-info.current-date}" />
+				<attribute name="Built-At" value="${build-info.current-time}" />
+				<attribute name="Class-Path" value="." />
+				<attribute name="Main-Class" value="com.itl.comm.powerItl.PowerItlSimHandler" />
+			</manifest>
+		</jar>
+	</target>
+	
+	<!-- Create the TempAndPower jar file using only the given list of classes.
+	Also, be sure to include all the JNA, log4j, and GeneralTools jars so that 
+	the jar file is self-contained. -->
+	<property name="tempAndPower-jar-name" value="TempAndPower ${build-info.current-date}.jar"/>
+	<target name="tempAndPower-jar" depends="compile">
+		<jar destfile="${build-directory}/${tempAndPower-jar-name}"
+			basedir="${classes-directory}" includes="/com/itl/**" >
+		<!--
+			basedir="${classes-directory}" includes="
+				com/itl/comm/powerItl/Frontend*,
+				com/itl/comm/powerItl/PowerItlException*,
+				com/itl/comm/SerialPortException*,
+				com/itl/comm/PowerMeter*,
+				com/itl/comm/ThermocoupleDaq*,
+				com/itl/comm/powerItl/PowerItlHandler*"
+			>
+		-->
+			
+			<fileset file="${source-directory}/log4j.properties" />
+			<zipfileset src="C:/Users/Kyle/user libraries/jna-3.5.1/jna-3.5.1.jar" excludes="META-INF/*.SF"/>
+			<zipfileset src="C:/Users/Kyle/user libraries/jna-3.5.1/platform-3.5.1.jar" excludes="META-INF/*.SF"/>
+			<zipfileset src="C:/Users/Kyle/user libraries/apache-log4j-1.2.17/log4j-1.2.17.jar" excludes="META-INF/*.SF"/>
+			<zipfileset src="C:/Users/Kyle/user libraries/GeneralTools.jar" excludes="META-INF/*.SF"/>
+			
+			<manifest>
+				<attribute name="Built-By" value="kgraba" />
+				<attribute name="Built-On" value="${build-info.current-date}" />
+				<attribute name="Built-At" value="${build-info.current-time}" />
+				<attribute name="Class-Path" value="." />
+				<attribute name="Main-Class" value="com.itl.comm.powerItl.Frontend" />
+			</manifest>
+		</jar>
+	</target>
+</project>
