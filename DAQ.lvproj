@@ -49,7 +49,7 @@
 		</Item>
 		<Item Name="daq" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">17</Property>
+			<Property Name="Bld_version.build" Type="Int">21</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -334,7 +334,7 @@
 				<Property Name="INST_buildSpecName" Type="Str">ITL DAQ Installer</Property>
 				<Property Name="INST_defaultDir" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
 				<Property Name="INST_productName" Type="Str">ITL DAQ</Property>
-				<Property Name="INST_productVersion" Type="Str">1.0.3</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.4</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">15008024</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
@@ -494,7 +494,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{56074E10-2DD5-493A-A0EB-4B2C3A847F1E}</Property>
-				<Property Name="Bld_version.build" Type="Int">12</Property>
+				<Property Name="Bld_version.build" Type="Int">16</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ITL Temp and Power Server.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power/ITL Temp and Power Server.exe</Property>
@@ -504,7 +504,7 @@
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power/support</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/itl_icon32.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{7220387B-E0BC-498E-A3E3-D2117CC122DA}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{D02C42AE-0427-4CA4-ABB6-2AF30130581A}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main.vi</Property>
