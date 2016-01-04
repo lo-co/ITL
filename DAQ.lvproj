@@ -49,7 +49,7 @@
 		</Item>
 		<Item Name="daq" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">21</Property>
+			<Property Name="Bld_version.build" Type="Int">24</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -268,8 +268,8 @@
 				<Property Name="Destination[1].type" Type="Str">userFolder</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="DistPart[0].flavorID" Type="Str">_full_</Property>
-				<Property Name="DistPart[0].productID" Type="Str">{6DE8D782-DB58-4A4D-B240-F6FB01676601}</Property>
-				<Property Name="DistPart[0].productName" Type="Str">NI-488.2 Runtime 15.0</Property>
+				<Property Name="DistPart[0].productID" Type="Str">{FE88A6A7-F11C-4683-88EC-7298CCBADF4F}</Property>
+				<Property Name="DistPart[0].productName" Type="Str">NI-488.2 Runtime 15.0.1</Property>
 				<Property Name="DistPart[0].upgradeCode" Type="Str">{357F6618-C660-41A2-A185-5578CC876D1D}</Property>
 				<Property Name="DistPart[1].flavorID" Type="Str">_full_</Property>
 				<Property Name="DistPart[1].productID" Type="Str">{7A1192BB-1A96-4D8B-9E44-446E5F071B68}</Property>
@@ -280,12 +280,12 @@
 				<Property Name="DistPart[2].productName" Type="Str">NI-Serial Runtime 15.0</Property>
 				<Property Name="DistPart[2].upgradeCode" Type="Str">{01D82F43-B48D-46FF-8601-FC4FAAE20F41}</Property>
 				<Property Name="DistPart[3].flavorID" Type="Str">_deployment_</Property>
-				<Property Name="DistPart[3].productID" Type="Str">{17EF98AB-54E8-48A7-A0DD-A8A4366E92B2}</Property>
-				<Property Name="DistPart[3].productName" Type="Str">NI-VISA Runtime 15.0</Property>
+				<Property Name="DistPart[3].productID" Type="Str">{24D0BA6A-3C44-41E7-A357-FD1CAFB59F58}</Property>
+				<Property Name="DistPart[3].productName" Type="Str">NI-VISA Runtime 15.0.1</Property>
 				<Property Name="DistPart[3].upgradeCode" Type="Str">{8627993A-3F66-483C-A562-0D3BA3F267B1}</Property>
 				<Property Name="DistPart[4].flavorID" Type="Str">DefaultFull</Property>
-				<Property Name="DistPart[4].productID" Type="Str">{1CB9B79D-FBCA-43F4-B990-65BD2145BDD0}</Property>
-				<Property Name="DistPart[4].productName" Type="Str">NI LabVIEW Runtime 2015</Property>
+				<Property Name="DistPart[4].productID" Type="Str">{ABA11EA6-E10F-4DE5-A918-1ADA8FFB045C}</Property>
+				<Property Name="DistPart[4].productName" Type="Str">NI LabVIEW Runtime 2015 f2</Property>
 				<Property Name="DistPart[4].SoftDep[0].exclude" Type="Bool">false</Property>
 				<Property Name="DistPart[4].SoftDep[0].productName" Type="Str">NI LabVIEW Runtime 2015 Non-English Support.</Property>
 				<Property Name="DistPart[4].SoftDep[0].upgradeCode" Type="Str">{128ABF1E-5F69-40D1-8A81-33DCF8229F08}</Property>
@@ -334,21 +334,27 @@
 				<Property Name="INST_buildSpecName" Type="Str">ITL DAQ Installer</Property>
 				<Property Name="INST_defaultDir" Type="Str">{2CCBBEB6-61CF-4EC3-BA88-5BEC28EB5EBC}</Property>
 				<Property Name="INST_productName" Type="Str">ITL DAQ</Property>
-				<Property Name="INST_productVersion" Type="Str">1.0.4</Property>
+				<Property Name="INST_productVersion" Type="Str">1.1.7</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
-				<Property Name="InstSpecVersion" Type="Str">15008024</Property>
+				<Property Name="InstSpecVersion" Type="Str">15008029</Property>
+				<Property Name="MSI_arpCompany" Type="Str">MSR Consulting, LLC</Property>
+				<Property Name="MSI_arpContact" Type="Str">Matt Richardson</Property>
+				<Property Name="MSI_arpPhone" Type="Str">(303) 931-6760</Property>
+				<Property Name="MSI_arpURL" Type="Str">http://www.msrconsults.com</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
 				<Property Name="MSI_distID" Type="Str">{9CFC4A40-941A-44B3-923E-FC10D88352CF}</Property>
 				<Property Name="MSI_hideNonRuntimes" Type="Bool">true</Property>
 				<Property Name="MSI_osCheck" Type="Int">0</Property>
 				<Property Name="MSI_upgradeCode" Type="Str">{CC416A73-EC83-4FE0-AB5F-B33EB65DF6B2}</Property>
+				<Property Name="MSI_windowMessage" Type="Str">The configurable ITL temperature and power server.  This version corrects an issue with the CJC when using the USB-TC01 meter.</Property>
+				<Property Name="MSI_windowTitle" Type="Str">ITL Temperature and Power Server</Property>
 				<Property Name="RegDest[0].dirName" Type="Str">Software</Property>
 				<Property Name="RegDest[0].dirTag" Type="Str">{DDFAFC8B-E728-4AC8-96DE-B920EBB97A86}</Property>
 				<Property Name="RegDest[0].parentTag" Type="Str">2</Property>
 				<Property Name="RegDestCount" Type="Int">1</Property>
 				<Property Name="Source[0].dest" Type="Str">{0C566842-A946-40F3-92CC-8E087146E18C}</Property>
 				<Property Name="Source[0].File[0].dest" Type="Str">{0C566842-A946-40F3-92CC-8E087146E18C}</Property>
-				<Property Name="Source[0].File[0].name" Type="Str">TempAndPower.exe</Property>
+				<Property Name="Source[0].File[0].name" Type="Str">ITL Temp and Power Server.exe</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].destIndex" Type="Int">0</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].name" Type="Str">TempAndPower</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].subDir" Type="Str">DAQ</Property>
@@ -494,7 +500,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{56074E10-2DD5-493A-A0EB-4B2C3A847F1E}</Property>
-				<Property Name="Bld_version.build" Type="Int">16</Property>
+				<Property Name="Bld_version.build" Type="Int">19</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ITL Temp and Power Server.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power/ITL Temp and Power Server.exe</Property>
@@ -504,7 +510,7 @@
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/Temp_Power/support</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/itl_icon32.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{D02C42AE-0427-4CA4-ABB6-2AF30130581A}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{118A608A-D5AA-4D3D-AF9E-615C81FA51CF}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main.vi</Property>
